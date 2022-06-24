@@ -27,8 +27,11 @@ function App() {
       <header className="App-header">
         This is where the messages will go.
       </header>
-      <input type="text" value={message} onChange={handleMessageState} />
-      <button onClick={sendMessage}/>
+      <label htmlFor="message">Chat</label>
+      <input type="text" id="message" value={message} onChange={handleMessageState}/>
+      <button onClick={sendMessage}>
+        Send Message
+      </button>
       <div>{chat}</div>
     </div>
   );
