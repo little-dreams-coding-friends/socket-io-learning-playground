@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('We got connection');
+  socket.on('chatMessage', (data, cb) => {
+    console.log('This is the socket data we recieved', data);
+    cb(data);
+  });
 });
 
 server.listen(port, () => {

@@ -11,7 +11,6 @@ function App() {
   });
   //TODO: handle send message through socket
   const handleResponse = (response) => {
-    console.log(response);
     setChat(response);
   };
   //TODO: handle receive message through socket
@@ -20,6 +19,8 @@ function App() {
   };
   //TODO:handle message maker from user.
   const handleMessageState = (e) => {
+    e.preventDefault();
+    console.log('Setting message')
     setMessage(e.target.value);
   };
   return (
