@@ -6,6 +6,7 @@ function App() {
   socket.on('connect', () => {
     console.log('We have a front end connection');
   });
+
   return (
     <div className="App">
       <header className="App-header">
