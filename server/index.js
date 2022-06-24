@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-// const http = require('http');
-// const server = http.createServer(app);
-// const {Server} = require('socket.io');
-// const io = new Server(server);
+const http = require('http');
+const server = http.createServer(app);
+const {Server} = require('socket.io');
+const io = new Server(server);
 
 const port = 3001;
 
@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.status(200).send();
 });
 
-app.listen(port, () => {
+io.on('connection', (socket) => {
+  console.log('We got connection');
+});
+
+server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
